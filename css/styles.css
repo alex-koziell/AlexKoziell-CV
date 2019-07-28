@@ -1,0 +1,79 @@
+.container-fluid {
+    padding: 3% 10%;
+}
+
+.institution {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1.2rem;
+    padding-top: 2.5%;
+}
+
+.description {
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+
+/* Title section */
+#title {
+    text-align: center;
+}
+
+ /* Education section */
+ #education {
+     text-align: center;
+     font-family: 'Roboto', sans-serif;
+ }
+
+#education .institution {
+    text-align: left;
+}
+
+.date {
+    text-align: right;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1.2rem;
+    padding-top: 2.5%;
+}
+
+ .qualification {
+     font-family: 'Roboto', sans-serif;
+     font-weight: 500;
+     font-size: 1.5rem;
+     padding-top: 1.5%;
+     padding-bottom: 1%;
+}
+
+.class {
+    font-weight: 500;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.subject {
+    text-align: left;
+}
+.grade {
+    text-align: right;
+    font-weight: 700;
+}
+
+/* Awards section */
+#awards {
+    text-align: center;
+}
+
+#awards .institution {
+    font-size: 1.3rem;
+}
+
+.award {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    padding-top: 2.5%
+}
