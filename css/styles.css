@@ -32,7 +32,7 @@
     text-align: left;
 }
 
-.date {
+#education .date {
     text-align: right;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
@@ -77,3 +77,31 @@
     font-weight: 700;
     padding-top: 2.5%
 }
+
+ /* Professional experience section */
+ #experience {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+ }
+
+.job {
+    font-weight: 700;
+    font-size: 1.35rem;
+ }
+
+ #experience .date, .employer {
+     font-weight: 700;
+     font-style: italic;
+     padding-top: 0.75%;
+ }
+
+ /* Skills and interests section */
+ #skills {
+     text-align: center;
+ }
+ 
+ .course {
+     padding: 0.25%;
+     font-family: 'Open Sans', sans-serif;
+     font-style: italic;
+ }
