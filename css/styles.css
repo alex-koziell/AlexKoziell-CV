@@ -22,6 +22,10 @@
     text-align: center;
 }
 
+#title h1 {
+    font-style: italic;
+}
+
  /* Education section */
  #education {
      text-align: center;
@@ -98,10 +102,16 @@
  /* Skills and interests section */
  #skills {
      text-align: center;
+     padding-bottom: 150px;
  }
  
  .course {
-     padding: 0.25%;
-     font-family: 'Open Sans', sans-serif;
-     font-style: italic;
+    padding: 0.25%;
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+}
+
+ #skills hr {    
+    border-top: 3px dashed;
+    max-width: 10%;
  }
