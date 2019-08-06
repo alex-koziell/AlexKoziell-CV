@@ -30,7 +30,6 @@
  #education {
      text-align: center;
      font-family: 'Roboto', sans-serif;
-     padding-top: 3%;
  }
 
 #education .institution {
@@ -71,7 +70,6 @@
 /* Awards section */
 #awards {
     text-align: center;
-    padding-top: 3%;
 }
 
 #awards .institution {
@@ -88,7 +86,6 @@
  #experience {
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    padding-top: 3%;
  }
 
 .job {
@@ -106,7 +103,6 @@
  #skills {
      text-align: center;
      padding-bottom: 150px;
-     padding-top: 3%;
  }
  
  .course {
