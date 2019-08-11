@@ -111,7 +111,13 @@
     font-style: italic;
 }
 
+#skills ul {
+    list-style-position: inside;
+    padding: 0;
+}
+
  #skills hr {    
     border-top: 3px dashed;
     max-width: 10%;
+    color: #52616b;
  }
