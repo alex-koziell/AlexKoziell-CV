@@ -17,6 +17,41 @@
     padding-bottom: 2%;
 }
 
+ /* avatar images */
+ .profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .maintenance-img{
+        width: 90%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .maintenance-img{
+        width: 80%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .maintenance-img{
+        width: 70%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .maintenance-img{
+        width: 50%;
+    }
+}
+
 /* Title section */
 #title {
     text-align: center;
@@ -24,12 +59,6 @@
 
 #title h1 {
     font-style: italic;
-}
-
-#title img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
 }
 
 #title>.container-fluid {
