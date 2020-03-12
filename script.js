@@ -9,12 +9,12 @@ const classifier = knnClassifier.create();
 let classCounts = {0: 0, 1: 0, 2: 0};
 
 async function app() {
+  let buttonsDisabled = true;
   document.getElementById('console').innerText = "Loading AI module..."
   // Load the model
   net = await mobilenet.load();
   document.getElementById('console').innerText = "Add a class to make predictions!"
   document.getElementById('use-webcam').hidden = false;
-
 
   const enableWebcam = async () => {
     document.getElementById('use-webcam').hidden = true;
@@ -24,9 +24,18 @@ async function app() {
     document.getElementById('retake-img').hidden = false;
   }
 
+  const toggleButtons = async () => {
+    buttonsDisabled = !buttonsDisabled;
+    document.getElementById('class-a').disabled = buttonsDisabled;
+    document.getElementById('class-b').disabled = buttonsDisabled;
+    document.getElementById('class-c').disabled = buttonsDisabled;
+    document.getElementById('predict-button').disabled  = buttonsDisabled;
+  }
+
   const captureImg = async () => {
     img = await webcamData.capture();
     webcamElement.pause();
+    if (buttonsDisabled) { toggleButtons(); }
   }
 
   // Reads an image from the webcam and associates it with a specific class index.
@@ -42,6 +51,8 @@ async function app() {
 
      // Dispose of the tensor to release memory.
      img.dispose();
+     webcamElement.play();
+     if (!buttonsDisabled) { toggleButtons(); }
    }
 
  const predictClass = async () => {
@@ -52,27 +63,33 @@ async function app() {
      const result = await classifier.predictClass(activation);
 
      const classes = ['A', 'B', 'C'];
-     let resultText = `
+     document.getElementById('console').innerText = `
        Prediction: ${classes[result.label]}\n
        Probability: ${result.confidences[result.label]}\n
      `;
-     document.getElementById('console').innerText = resultText;
-     document.getElementById('console2').innerText = resultText;
 
-     // Dispose of the tensor to release memory.
-     img.dispose()
    } else {
      document.getElementById('console').innerText = document.getElementById('console2').innerText = "No classes added yet!";
    }
    // Give some breathing room by waiting for the next animation frame to fire.
    await tf.nextFrame();
+   if (!buttonsDisabled) { toggleButtons(); }
+   window.scrollTo({ top: 0, behavior: 'smooth' });
  }
 
  // Enable webcam when user clicks button.
  document.getElementById('use-webcam').addEventListener('click', () => enableWebcam());
  // Capture images with button click.
- document.getElementById('capture-img').addEventListener('click', () => captureImg());
- document.getElementById('retake-img').addEventListener('click', () => webcamElement.play());
+ document.getElementById('capture-img').addEventListener('click', () => {
+   captureImg();
+   if (buttonsDisabled) { toggleButtons(); }
+ });
+ document.getElementById('retake-img').addEventListener('click', () => {
+   // Dispose of the tensor to release memory.
+   img.dispose();
+   webcamElement.play();
+   if (!buttonsDisabled) { toggleButtons(); }
+ });
 
  // When clicking a button, add an example for that class.
  document.getElementById('class-a').addEventListener('click', () => addExample(0));

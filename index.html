@@ -74,8 +74,10 @@
           </div>
       </div>
 
-      <h5>Click "Add Data" to add the captured image as training data for the respective class,
-        or "Predict" to test your classifier!</h5>
+      <h5>
+        Use "Capture" to capture an image, then click "Add Data" to add the captured image
+        as training data for the respective class, or "Predict" to test your classifier!
+      </h5>
       <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-6">
           <div class="card">
@@ -83,7 +85,7 @@
             <div class="card-body">
               <p class="card-text">Current number of data points: </p>
               <p id="class-0-count">0</p>
-              <button type="button" class="btn btn-primary" id="class-a">Add Data</button>
+              <button disabled type="button" class="btn btn-primary" id="class-a">Add Data</button>
             </div>
           </div>
         </div>
@@ -93,7 +95,7 @@
             <div class="card-body">
               <p class="card-text">Current number of data points: </p>
               <p id="class-1-count">0</p>
-              <button type="button" class="btn btn-primary" id="class-b">Add Data</button>
+              <button disabled type="button" class="btn btn-primary" id="class-b">Add Data</button>
             </div>
           </div>
         </div>
@@ -103,13 +105,13 @@
             <div class="card-body">
               <p class="card-text">Current number of data points: </p>
               <p id="class-2-count">0</p>
-              <button type="button" class="btn btn-primary" id="class-c">Add Data</button>
+              <button disabled type="button" class="btn btn-primary" id="class-c">Add Data</button>
             </div>
           </div>
         </div>
       </div>
       <div class="container-fluid">
-        <button type="button" class="btn btn-lg btn-success" id="predict-button">Predict</button>
+        <button disabled type="button" class="btn btn-lg btn-success" id="predict-button">Predict</button>
       </div>
       <div class="console" id="console2"></div>
       <!-- <img class='maintenance-img' src="images/avatarforall_maintenance.png" /> -->
