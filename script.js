@@ -19,8 +19,7 @@ async function app() {
   const enableWebcam = async () => {
     document.getElementById('use-webcam').hidden = true;
     webcamElement.hidden = false;
-    let webcamConfig = {facingMode: 'environment'}
-    webcamData = await tf.data.webcam(webcamElement, webcamConfig);
+    webcamData = await tf.data.webcam(webcamElement, {facingMode: 'environment'});
     document.getElementById('capture-img').hidden = false;
     document.getElementById('retake-img').hidden = false;
   }
