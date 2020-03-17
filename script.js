@@ -13,7 +13,8 @@ async function app() {
   // Load the MobileNet model.
   let net = await mobilenet.load();
   document.getElementById('console').innerText = "Add a class to make predictions!"
-  document.getElementById('enable-webcam').hidden = false;
+  if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))
+      document.getElementById('enable-webcam').hidden = false;
   document.getElementById('upload-btn').hidden = false;
   let buttonsDisabled = true;
   let cameraEnabled = false;
