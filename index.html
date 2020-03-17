@@ -56,13 +56,18 @@
 
   <section id='title'>
     <div class="container-fluid">
-      <h1>Train Your Own Image Classifier with TensorFlow.js! (Camera Required)</h1>
+      <h1><img width="50" height="50" src="images/TF_logo.svg"/> Train Your Own Image Classifier with TensorFlow.js! <img width="50" height="50" src="images/TF_logo.svg"/></h1>
   </section>
   <section id='classifier'>
     <div class="container-fluid">
       <div class="console" id="console"></div>
       <div class="data-input">
-          <button hidden class="btn btn-light" id="use-webcam">Enable Camera</button>
+          <button hidden class="btn btn-light" id="enable-webcam">Enable Camera</button>
+          <div class="row">
+            <div class="col text-center">
+              <button hidden class="btn btn-light" id="disable-webcam">Disable Camera</button>
+            </div>
+          </div>
           <video playsinline muted hidden class="webcam" id="webcam" width="500" height="500"></video>
           <div class="row">
             <div class="col-lg-6 col-md-6 text-lg-right text-md-right text-sm-center">
@@ -99,8 +104,9 @@
             </div>
           </div>
         </div>
+        <div class="d-none d-sm-block d-md-none col-sm-3"></div>
         <div class="col-lg-4 col-md-4 col-sm-6">
-          <div class="card">
+          <div class="card class-card">
             <h5 class="card-header">Class C</h5>
             <div class="card-body">
               <p class="card-text">Current number of data points: </p>
@@ -110,7 +116,7 @@
           </div>
         </div>
       </div>
-      <div class="container-fluid">
+      <div class="container-fluid predict-container">
         <button disabled type="button" class="btn btn-lg btn-success" id="predict-button">Predict</button>
       </div>
       <div class="console" id="console2"></div>

@@ -1,5 +1,5 @@
 .container-fluid {
-    padding: 3% 10%;
+    padding: 0% 10%;
 }
 
 .institution {
@@ -39,6 +39,14 @@
   margin: auto;
   padding-bottom: 2%;
   padding-top: 1%;
+}
+
+.predict-container {
+  padding-top: 3%;
+}
+
+.class-card {
+  margin-top: 3%
 }
 
 /* Extra small devices (phones, 600px and down) */
