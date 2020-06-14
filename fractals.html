@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fractals - AlexKoziell</title>
+
+    <link rel="stylesheet" href="/styles/fractals.css">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Use jQuery to load common scripts, styles, CDNs, etc -->
+    <div id="head"></div>
+    <script>$('#head').load('partials/head.html')</script>
+
+  </head>
+  <body>
+
+    <!-- Use jQuery to load the same navbar from a single file across all pages -->
+    <div id="navbar"></div>
+    <script>
+      $(document).ready(() => {
+        $('#navbar').load('partials/navbar.html')
+      })
+    </script>
+
+    <div class="controls">
+      <input id="slider" type="range" name="base-slider" value="3" min="0" max="10" step="1">
+      <output id="base-value" for="base-slider"></output>
+    </div>
+    <hr />
+    <canvas id="canvas"></canvas>
+    <script type="text/javascript" src="scripts/fractals.js"></script>
+
+  </body>
+</html>

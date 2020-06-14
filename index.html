@@ -7,137 +7,28 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Alex Koziell</title>
 
-  <!-- favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-  <link rel="manifest" href="favicon/site.webmanifest">
-
-  <!-- bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-  <!-- google fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Roboto:400,500i,900&display=swap" rel="stylesheet">
-
-  <!-- internal styles -->
-  <link rel="stylesheet" href="css/styles.css">
-
   <!-- Load the latest version of TensorFlow.js -->
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
 
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Use jQuery to load common scripts, styles, CDNs, etc -->
+  <div id="head"></div>
+  <script>$('#head').load('partials/head.html')</script>
+
 </head>
 
 <body>
 
-  <!-- nav bar -->
-
-  <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #b9d7ea;">
-    <a class="navbar-brand" href="index.html"><img src="favicon/favicon-32x32.png" width="30" height="30" alt=""> Alex Koziell</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <!-- <a class="nav-item nav-link" href="#">Blog</a> -->
-        <a class="nav-item nav-link" target="_blank" href="https://github.com/alex-koziell">GitHub</a>
-        <!-- <a class="nav-item nav-link" href="#">PolyMath</a> -->
-        <a class="nav-item nav-link" target="_blank" href="CV.pdf">CV/Resume</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- title section -->
-  <section id='title'>
-    <div class="container-fluid">
-      <h1><img width="50" height="50" src="images/TF_logo.svg"/> Train Your Own Image Classifier with TensorFlow.js! <img width="50" height="50" src="images/TF_logo.svg"/></h1>
-  </section>
-  <section id='classifier'>
-    <div class="container-fluid">
-      <div class="console" id="console"></div>
-      <div class="data-input">
-          <button hidden class="btn btn-light camera-button" id="enable-webcam">Enable Camera</button>
-          <div class="row">
-            <div class="col text-center">
-              <button hidden class="btn btn-light camera-button" id="disable-webcam">Disable Camera</button>
-            </div>
-          </div>
-          <video playsinline muted hidden class="webcam" id="webcam"></video>
-          <img hidden class="webcam" id="image-preview" src=# />
-          <div class="row">
-            <div class="col-lg-6 col-md-6 text-lg-right text-md-right text-sm-center">
-              <button hidden class="btn btn-lg btn-light" id="capture-img">Capture</button>
-            </div>
-            <div class="col-lg-6 col-md-6 text-lg-left text-md-left text-sm-center">
-              <button hidden class="btn btn-lg btn-light camera-button" id="retake-img">Retake</button>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col text-center">
-              <button hidden class="btn btn-light camera-button" id="upload-btn">Upload Image</button>
-            </div>
-          </div>
-          <div class="row">
-            <div class="d-none d-sm-none d-md-block col-md-3 col-lg-3"></div>
-            <div class="col-sm-12 col-lg-6 col-md-6">
-              <div hidden class="custom-file" id="upload-div">
-                <input type="file" class="custom-file-input" id="upload-input">
-                <label class="custom-file-label" for="upload-form" id="file-preview">Choose file</label>
-              </div>
-            </div>
-          </div>
-      </div>
-
-      <h5>
-        Click "Add Data" to add an image as training data for the respective class, or "Predict" to test your classifier!
-      </h5>
-      <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-6">
-          <div class="card class-card">
-            <h5 class="card-header">Class A</h5>
-            <div class="card-body">
-              <p class="card-text">Current number of data points: </p>
-              <p id="class-0-count">0</p>
-              <button disabled type="button" class="btn btn-primary" id="class-a">Add Data</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-6">
-          <div class="card class-card">
-            <h5 class="card-header">Class B</h5>
-            <div class="card-body">
-              <p class="card-text">Current number of data points: </p>
-              <p id="class-1-count">0</p>
-              <button disabled type="button" class="btn btn-primary" id="class-b">Add Data</button>
-            </div>
-          </div>
-        </div>
-        <div class="d-none d-sm-block d-md-none col-sm-3"></div>
-        <div class="col-lg-4 col-md-4 col-sm-6">
-          <div class="card class-card">
-            <h5 class="card-header">Class C</h5>
-            <div class="card-body">
-              <p class="card-text">Current number of data points: </p>
-              <p id="class-2-count">0</p>
-              <button disabled type="button" class="btn btn-primary" id="class-c">Add Data</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid predict-container">
-        <button disabled type="button" class="btn btn-lg btn-success" id="predict-button">Predict</button>
-      </div>
-      <div class="console" id="console2"></div>
-      <!-- <img class='maintenance-img' src="images/avatarforall_maintenance.png" /> -->
-    </div>
-    </div>
-  </section>
-  <!-- Load index.js after the content of the page -->
-  <script src="script.js"></script>
+  <!-- Use jQuery to load the same navbar from a single file across all pages -->
+  <div id="navbar"></div>
+  <script>
+    $(document).ready(() => {
+      $('#navbar').load('partials/navbar.html')
+    })
+  </script>
 
 </body>
 

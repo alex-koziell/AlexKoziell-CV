@@ -1,0 +1,25 @@
+body {
+  align-items: center;
+}
+
+#base-value {
+  margin: auto;
+}
+
+#canvas {
+  display: block;
+  margin: auto;
+  width: 80%;
+}
+
+.controls {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-top: 1.5em;
+  width: auto;
+}
+
+#slider {
+  margin: auto;
+}
