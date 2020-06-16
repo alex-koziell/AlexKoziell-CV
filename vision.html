@@ -1,133 +1,84 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Computer Vision - AlexKoziell</title>
 
-    <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="public/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="public/favicon/favicon-16x16.png">
-    <link rel="manifest" href="public/favicon/site.webmanifest">
+<head>
+  <meta charset="utf-8">
+  <title>Computer Vision - AlexKoziell</title>
 
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="public/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="public/favicon/favicon-16x16.png">
+  <link rel="manifest" href="public/favicon/site.webmanifest">
 
-    <!-- internal styles -->
-    <link rel="stylesheet" href="styles/master.css">
-    <link rel="stylesheet" href="styles/vision.css">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- internal styles -->
+  <link rel="stylesheet" href="styles/master.css">
+  <link rel="stylesheet" href="styles/vision.css">
 
-    <!-- Load the latest version of TensorFlow.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  </head>
-  <body>
+  <!-- Load the latest version of TensorFlow.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
 
-    <!-- Use jQuery to load the same navbar from a single file across all pages -->
-    <div id="navbar"></div>
-    <script>
-      $(document).ready(() => {
-        $('#navbar').load('partials/navbar.html')
-      })
-    </script>
+</head>
 
-    <!-- title section -->
-    <section id='title'>
-      <div class="container-fluid">
-        <h1><img width="50" height="50" src="public/images/TF_logo.svg"/>
-          Train Your Own Image Classifier with TensorFlow.js
-        <img width="50" height="50" src="public/images/TF_logo.svg"/></h1>
-    </section>
-    <section id='classifier'>
-      <div class="container-fluid">
-        <div class="console" id="console"></div>
-        <div class="data-input">
-            <button hidden class="btn btn-light camera-button" id="enable-webcam">Enable Camera</button>
-            <div class="row">
-              <div class="col text-center">
-                <button hidden class="btn btn-light camera-button" id="disable-webcam">Disable Camera</button>
-              </div>
-            </div>
-            <video playsinline muted hidden class="webcam" id="webcam"></video>
-            <img hidden class="webcam" id="image-preview" src=# />
-            <div class="row">
-              <div class="col-lg-6 col-md-6 text-lg-right text-md-right text-sm-center">
-                <button hidden class="btn btn-lg btn-light" id="capture-img">Capture</button>
-              </div>
-              <div class="col-lg-6 col-md-6 text-lg-left text-md-left text-sm-center">
-                <button hidden class="btn btn-lg btn-light camera-button" id="retake-img">Retake</button>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col text-center">
-                <button hidden class="btn btn-light camera-button" id="upload-btn">Upload Image</button>
-              </div>
-            </div>
-            <div class="row">
-              <div class="d-none d-sm-none d-md-block col-md-3 col-lg-3"></div>
-              <div class="col-sm-12 col-lg-6 col-md-6">
-                <div hidden class="custom-file" id="upload-div">
-                  <input type="file" class="custom-file-input" id="upload-input">
-                  <label class="custom-file-label" for="upload-form" id="file-preview">Choose file</label>
-                </div>
-              </div>
-            </div>
-        </div>
+<body>
 
-        <h5>
-          Click "Add Data" to add an image as training data for the respective class, or "Predict" to test your classifier!
-        </h5>
-        <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-6">
-            <div class="card class-card">
-              <h5 class="card-header">Class A</h5>
-              <div class="card-body">
-                <p class="card-text">Current number of data points: </p>
-                <p id="class-0-count">0</p>
-                <button disabled type="button" class="btn btn-primary" id="class-a">Add Data</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-6">
-            <div class="card class-card">
-              <h5 class="card-header">Class B</h5>
-              <div class="card-body">
-                <p class="card-text">Current number of data points: </p>
-                <p id="class-1-count">0</p>
-                <button disabled type="button" class="btn btn-primary" id="class-b">Add Data</button>
-              </div>
-            </div>
-          </div>
-          <div class="d-none d-sm-block d-md-none col-sm-3"></div>
-          <div class="col-lg-4 col-md-4 col-sm-6">
-            <div class="card class-card">
-              <h5 class="card-header">Class C</h5>
-              <div class="card-body">
-                <p class="card-text">Current number of data points: </p>
-                <p id="class-2-count">0</p>
-                <button disabled type="button" class="btn btn-primary" id="class-c">Add Data</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container-fluid predict-container">
-          <button disabled type="button" class="btn btn-lg btn-success" id="predict-button">Predict</button>
-        </div>
-        <div class="console" id="console2"></div>
-        <!-- <img class='maintenance-img' src="images/avatarforall_maintenance.png" /> -->
-      </div>
-      </div>
-    </section>
-    <!-- Load index.js after the content of the page -->
-    <script src="scripts/vision.js"></script>
+  <!-- Use jQuery to load the same navbar from a single file across all pages -->
+  <div id="navbar"></div>
+  <script>
+    $(document).ready(() => {
+      $('#navbar').load('partials/navbar.html')
+    })
+  </script>
 
-  </body>
+  <h1 id="main-prediction">Predicting...</h1>
+
+  <div class="pred-input">
+    <image id="pred-img" src='public/images/kitten.png'></image>
+    <div class="custom-file" id="upload-div">
+      <input type="file" class="custom-file-input" id="pred-upload">
+      <label class="custom-file-label" for="upload-form" id="file-preview">Choose file</label>
+    </div>
+  </div>
+
+  <div class="prediction-table">
+    <table>
+      <tr>
+        <th class="table-logo"><img width="50" height="50" src="public/images/TF_logo.svg"/></th>
+        <th scope="col" class="col-header">Prediction</th>
+        <th scope="col" class="col-header">Confidence</th>
+      </tr>
+      <tr>
+        <th scope="row" class="row-header">1.</th>
+        <td class="pred-text"></td>
+        <td class="pred-conf"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="row-header">2.</th>
+        <td class="pred-text"></td>
+        <td class="pred-conf"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="row-header">3.</th>
+        <td class="pred-text"></td>
+        <td class="pred-conf"></td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Load index.js after the content of the page -->
+  <script src="scripts/vision.js"></script>
+
+</body>
+
 </html>
