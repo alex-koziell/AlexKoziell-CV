@@ -13,7 +13,6 @@ function isMobile() {
   return isAndroid() || isiOS();
 }
 
-
 /*
 document elements
 */
@@ -27,6 +26,7 @@ const fileInput = document.getElementById('pred-upload')
 listen for file upload
 */
 fileInput.addEventListener('change', function() {
+  mainPrediction.innerHTML = 'Predicting...';
   if (this.files && this.files[0]) {
     var file = this.files[0]; // reference first file BLOB
     document.getElementById('file-preview').innerText = this.files[0].name;
