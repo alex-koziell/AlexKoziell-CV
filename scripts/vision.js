@@ -33,6 +33,7 @@ fileInput.addEventListener('change', function() {
     url = URL.createObjectURL(file); // create an Object URL
     img.src = url; // create a temp. image
 
+    mainPrediction.innerHTML = "Predicting...";
     makePrediction();
   }
 });
