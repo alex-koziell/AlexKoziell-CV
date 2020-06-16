@@ -26,7 +26,6 @@ const fileInput = document.getElementById('pred-upload')
 listen for file upload
 */
 fileInput.addEventListener('change', function() {
-  mainPrediction.innerHTML = 'Predicting...';
   if (this.files && this.files[0]) {
     var file = this.files[0]; // reference first file BLOB
     document.getElementById('file-preview').innerText = this.files[0].name;
@@ -41,17 +40,20 @@ fileInput.addEventListener('change', function() {
 /*
 model and predictions
 */
+const version = 2;
+const alpha = 1.0;
+
 function makePrediction() {
   // Load the model.
-  mobilenet.load().then(model => {
+  mobilenet.load({version, alpha}).then(model => {
     // Classify the image.
     model.classify(img).then(predictions => {
-      console.log('Predictions: ');
       predictions.map((prediction, index) => {
         if (!index) { mainPrediction.innerHTML = prediction.className; }
         predictionTexts[index].innerHTML = prediction.className;
         predictionConfs[index].innerHTML = prediction.probability;
       })
+      console.log('Predictions: ');
       console.log(predictions);
     });
   });
