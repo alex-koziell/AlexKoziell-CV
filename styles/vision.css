@@ -1,11 +1,28 @@
 body {
   align-items: center;
+  font-family: sans-serif;
   text-align: center;
+}
+
+h1 {
+  font-family: sans-serif;
+  margin: 1.1em auto;
+}
+
+
+.pred-input {
+  align-items: center;
+}
+
+.pred-input img, .custom-file {
+  display: block;
+  margin: auto;
+  max-width: 75%;
+  max-height: 75%;
 }
 
 table {
   border-collapse: collapse;
-  font-family: sans-serif;
   margin: 1.2em auto;
 }
 
@@ -40,23 +57,14 @@ tr:nth-child(even) {
     background-color: #eee;
 }
 
-.pred-input {
-  align-items: center;
+footer {
+  margin: 1.5em 1.5em;
 }
 
-img, .custom-file {
-  display: block;
-  margin: auto;
+footer a {
+  font-style: italic;
 }
 
-.custom-file {
-  max-width: 50%
-}
-
-h1 {
-  font-family: sans-serif;
-  margin: 1.1em auto;
-}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
