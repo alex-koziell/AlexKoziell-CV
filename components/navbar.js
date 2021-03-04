@@ -12,6 +12,7 @@ class Navbar extends HTMLElement {
                 <a class="nav-btn" target="_blank" href="public/CV.pdf">CV/Resume</a>
                 <a class="nav-btn" href="vision.html">Machine Learning</a>
                 <a class="nav-btn" href="fractals.html">Fractals</a>
+                <a class="nav-icon" onclick="this.parentNode.classList.toggle('responsive');">&#9776;</a>
             </div>
         `;
     }

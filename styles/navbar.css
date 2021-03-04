@@ -30,3 +30,46 @@
 .nav-btn img {
     margin-right: 5px;
 }
+
+.nav-icon {
+    color: #333;
+    font-size: x-large;
+    padding: 5px 12px 7px 12px;
+    text-decoration: none;
+    display: none;
+    border: 1px solid #555;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
+
+.nav-icon:hover {
+    background-color: rgb(150, 181, 216);
+}
+
+@media screen and (max-width: 600px) {
+    .nav-btn:not(:first-child) {
+      display: none;
+    }
+    .nav-icon {
+      margin-left: auto;
+      display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar.responsive {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .navbar.responsive .nav-icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .responsive .nav-btn {
+        display: flex;
+        min-height: 50px;
+        border-bottom: 1px solid #aaa;
+        margin: auto;
+    }
+}
