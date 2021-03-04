@@ -1,6 +1,4 @@
 body {
-  align-items: center;
-  font-family: sans-serif;
   text-align: center;
 }
 
@@ -65,6 +63,24 @@ footer a {
   font-style: italic;
 }
 
+.upload-file {
+  min-height: 50px;
+  margin: auto;
+  max-width: 500px;
+}
+
+
+.upload-file input {
+  font-size: 16px;
+  padding: 5px 5px;
+}
+
+.upload-file label {
+  background-color: #eee;
+  padding: 5px 15px;
+  border: 1px solid #999;
+  border-radius: 5px;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {

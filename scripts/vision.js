@@ -28,7 +28,6 @@ listen for file upload
 fileInput.addEventListener('change', function() {
   if (this.files && this.files[0]) {
     var file = this.files[0]; // reference first file BLOB
-    document.getElementById('file-preview').innerText = this.files[0].name;
 
     url = URL.createObjectURL(file); // create an Object URL
     img.src = url; // create a temp. image

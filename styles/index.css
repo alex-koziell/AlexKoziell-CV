@@ -1,0 +1,16 @@
+.fancy-list {
+    background-color: #fff;
+}
+
+.fancy-list a {
+    color: #666;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: 15px 10px;
+    border-bottom: 1px solid #bbb;
+}
+
+.fancy-list a:hover {
+    background-color: #eee;
+}

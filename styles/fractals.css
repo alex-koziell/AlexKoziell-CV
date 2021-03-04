@@ -19,7 +19,6 @@ body {
 .slidecontainer {
   margin-top: 1.5em;
   text-align: center;
-  width: 100%; /* Width of the outside container */
 }
 
 /* The slider itself */

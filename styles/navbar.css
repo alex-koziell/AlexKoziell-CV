@@ -1,0 +1,32 @@
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 50px;
+
+    padding: 10px 10px;
+    background-color: #b9d7ea;
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.nav-btn:first-child {
+    font-size: 20px;
+    color: black;
+}
+
+.nav-btn:hover {
+    color: #111;
+}
+
+.nav-btn img {
+    margin-right: 5px;
+}
