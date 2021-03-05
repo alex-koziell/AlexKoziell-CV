@@ -21,14 +21,16 @@
   </head>
   <body>
 
-    <navbar-custom />
+    <navbar-custom></navbar-custom>
 
-    <div class="slidecontainer">
-      <input id="base-slider" class="slider" type="range" name="base-slider" value="3" min="0" max="10" step="1">
-      <output id="base-value" for="base-slider"></output>
+    <div class="content">
+      <div class="slidecontainer">
+        <input id="base-slider" class="slider" type="range" name="base-slider" value="3" min="0" max="10" step="1">
+        <output id="base-value" for="base-slider"></output>
+      </div>
+      <hr />
+      <canvas id="canvas"></canvas>  
     </div>
-    <hr />
-    <canvas id="canvas"></canvas>
     <script type="text/javascript" src="scripts/fractals.js"></script>
 
   </body>

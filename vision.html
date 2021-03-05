@@ -23,40 +23,42 @@
 
 <body>
 
-  <navbar-custom />
+  <navbar-custom></navbar-custom>
 
-  <h1 id="main-prediction">Loading...</h1>
+  <div class="content">
+    <h1 id="main-prediction">Loading...</h1>
 
-  <div class="pred-input">
-    <image id="pred-img" src='public/images/kitten.png'></image>
-    <div class="upload-file" id="upload-div">
-      <input type="file" class="file-input" id="pred-upload">
+    <div class="pred-input">
+      <image id="pred-img" src='public/images/kitten.png'></image>
+      <div class="upload-file" id="upload-div">
+        <input type="file" class="file-input" id="pred-upload">
+      </div>
     </div>
-  </div>
-
-  <div class="prediction-table">
-    <table>
-      <tr>
-        <th class="table-logo"><img width="50" height="50" src="public/images/TF_logo.svg"/></th>
-        <th scope="col" class="col-header">Prediction</th>
-        <th scope="col" class="col-header">Confidence</th>
-      </tr>
-      <tr>
-        <th scope="row" class="row-header">1.</th>
-        <td class="pred-text"></td>
-        <td class="pred-conf"></td>
-      </tr>
-      <tr>
-        <th scope="row" class="row-header">2.</th>
-        <td class="pred-text"></td>
-        <td class="pred-conf"></td>
-      </tr>
-      <tr>
-        <th scope="row" class="row-header">3.</th>
-        <td class="pred-text"></td>
-        <td class="pred-conf"></td>
-      </tr>
-    </table>
+  
+    <div class="prediction-table">
+      <table>
+        <tr>
+          <th class="table-logo"><img width="50" height="50" src="public/images/TF_logo.svg"/></th>
+          <th scope="col" class="col-header">Prediction</th>
+          <th scope="col" class="col-header">Confidence</th>
+        </tr>
+        <tr>
+          <th scope="row" class="row-header">1.</th>
+          <td class="pred-text"></td>
+          <td class="pred-conf"></td>
+        </tr>
+        <tr>
+          <th scope="row" class="row-header">2.</th>
+          <td class="pred-text"></td>
+          <td class="pred-conf"></td>
+        </tr>
+        <tr>
+          <th scope="row" class="row-header">3.</th>
+          <td class="pred-text"></td>
+          <td class="pred-conf"></td>
+        </tr>
+      </table>
+    </div>  
   </div>
 
   <!-- Load index.js after the content of the page -->

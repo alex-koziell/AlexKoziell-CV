@@ -1,4 +1,4 @@
-body {
+.content {
   text-align: center;
 }
 
@@ -80,6 +80,10 @@ footer a {
   padding: 5px 15px;
   border: 1px solid #999;
   border-radius: 5px;
+}
+
+footer {
+  text-align: center;
 }
 
 /* Extra small devices (phones, 600px and down) */
