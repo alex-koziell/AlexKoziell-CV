@@ -1,16 +1,29 @@
-.fancy-list {
-    background-color: #fff;
+.nav-bar {
+    margin: auto;
+    max-width: 600px;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    font-size: larger;
+    font-weight: bold;
+
+    border-bottom: 3px solid black;
 }
 
-.fancy-list a {
-    color: #666;
+.nav-link {
+    padding: 8px;
+    color: black;
     text-decoration: none;
-    display: block;
-    width: 100%;
-    padding: 15px 10px;
-    border-bottom: 1px solid #bbb;
 }
 
-.fancy-list a:hover {
-    background-color: #eee;
+.main {
+    margin: auto;
+    max-width: 600px;
+    text-align: justify;
+}
+
+.video {
+    display: block;
+    margin: auto;
 }
