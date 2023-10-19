@@ -28,6 +28,7 @@ h1 {
 
 .main {
     margin: auto;
+    margin-bottom: 15px;
     max-width: 600px;
     text-align: justify;
 }

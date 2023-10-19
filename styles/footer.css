@@ -1,0 +1,39 @@
+footer {
+    margin: auto;
+    max-width: 600px;
+    padding-bottom: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 3px solid white;
+}
+
+.social-icons a{
+    color: white;
+    margin-left: 0.3em;
+    text-decoration:none;
+}
+
+.social-icons a i{
+    font-size: 2.5em;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(0.67); 
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(0.67); 
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(0.67);
+    transition: all 200ms ease-in;
+    transform: scale(0.67);
+}
+.social-icons a:hover i{
+    box-shadow: 0px 0px 150px #000000;
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);
+}
