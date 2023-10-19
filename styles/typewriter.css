@@ -1,0 +1,13 @@
+.typewriter {
+    visibility: hidden;
+}
+
+.blinking-cursor::after {
+    content: "|";
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { color: transparent }
+    50% { color: white }
+}

@@ -20,6 +20,7 @@ typewriter = textElement => {
     let text = textElement.textContent
     let textLength = text.length
     textElement.textContent = ''
+    textElement.style.visibility = 'visible'
 
     let cursorPosition = 0
     let typeDelay = 50
