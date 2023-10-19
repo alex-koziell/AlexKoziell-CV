@@ -52,7 +52,7 @@ const observer = new IntersectionObserver(function(entries, observer) {
       if (entry.isIntersecting) {
         // Run the function when the element enters the viewport.
         typeText = typewriter(entry.target)
-        typeText()
+        setTimeout(typeText, 1200)
         // Ensure the function is only called once.
         observer.unobserve(entry.target)
       }
