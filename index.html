@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="styles/index.css">
   <link rel="stylesheet" href="styles/footer.css">
   <link rel="stylesheet" href="styles/typewriter.css">
+  <link rel="stylesheet" href="styles/fadein.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -22,18 +23,21 @@
 
   <main class="main">
     <h1 class="typewriter blinking-cursor">Alexander Koziell-Pipe </h1>
-    <p>
-      I'm a Computer Science PhD (DPhil) at the Oxford Quantum Group, working at the intersection of
-      Category Theory, Quantum Computing and Artificial Intelligence.
-    </p>
-    <p>
-      While the nuts and bolts of my research involves some hardcore maths, I like to explain the high
-      level concepts using diagrams (which also turn out to be math).
-    </p>
-    <p>
-      Outside of research, I love gymnastics. You can find many pictures of me upside-down here:
-    </p>
-    <blockquote class="instagram-media"
+    <div class="fade-in">
+      <p>
+        I'm a Computer Science PhD (DPhil) at the Oxford Quantum Group, working at the intersection of
+        Category Theory, Quantum Computing and Artificial Intelligence.
+      </p>
+      <p>
+        While the nuts and bolts of my research involves some hardcore maths, I like to explain the high
+        level concepts using diagrams (which also turn out to be math).
+      </p>
+      <p>
+        Outside of research, I love gymnastics. You can find many pictures of me upside-down here:
+      </p>
+    </div>
+
+    <blockquote class="instagram-media fade-in"
       data-instgrm-permalink="https://www.instagram.com/reel/CnewEQOhhme/?utm_source=ig_embed&amp;utm_campaign=loading"
       data-instgrm-version="14"
       style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max: width 326px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
@@ -123,7 +127,7 @@
     <script async src="//www.instagram.com/embed.js"></script>
   </main>
 
-  <footer>
+  <footer class="fade-in">
     <p class="footer-name">Alexander Koziell-Pipe</p>
     <div class="social-icons">
       <a href="https://github.com/alexkoziell" title="GitHub" target="_blank">
@@ -138,7 +142,8 @@
     </div>
   </footer>
 
-  <script src="scripts/index.js"></script>
+  <script src="scripts/typewriter.js"></script>
+  <script src="scripts/fadein.js"></script>
 
 </body>
 

@@ -33,7 +33,6 @@ typewriter = textElement => {
             let factor = -1
             while (factor <= 0)
                 factor = random_normal(1, 2, -1)
-            console.log(factor)
             setTimeout(typeText, typeDelay * factor)
         } else {
             setTimeout(
@@ -47,7 +46,7 @@ typewriter = textElement => {
     return typeText
 }
 
-const observer = new IntersectionObserver(function(entries, observer) {
+const typewriterObserver = new IntersectionObserver(function(entries, observer) {
     // Check if any of the elements are intersecting the viewport.
     for (const entry of entries) {
       if (entry.isIntersecting) {
@@ -62,6 +61,5 @@ const observer = new IntersectionObserver(function(entries, observer) {
 
 typewriterElements = document.querySelectorAll('.typewriter')
 typewriterElements.forEach(element => {
-    observer.observe(element)
+    typewriterObserver.observe(element)
 })
-observer.observe(document.querySelector('.typewriter'))
