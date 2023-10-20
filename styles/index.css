@@ -51,16 +51,3 @@ h1 {
 .introduction-text {
     transform: translateY(-10vh);
 }
-
-.collage {
-    display: flex;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-    overflow-x: auto;
-    justify-content: center safe;
-}
-
-.collage img {
-    border-radius: 3%;
-    max-height: 40vh;
-}

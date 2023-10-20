@@ -1,0 +1,37 @@
+.collage {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-x: auto;
+    justify-content: center safe;
+    scroll-behavior: smooth;
+}
+
+.collage img {
+    border-radius: 3%;
+    max-width: 300px;
+}
+
+.collage-container {
+    position: relative;
+}
+
+.collage-container button {
+  position: absolute;
+  display: inline-block;
+  background: transparent;
+  border-radius: 100%;
+  border: 3px solid #002147;
+  font-size: xx-large;
+}
+
+.collage-container .scroll-left {
+    top: 50%;
+    left: 5px;
+
+}
+
+.collage-container .scroll-right {
+    top: 50%;
+    right: 5px;
+}
