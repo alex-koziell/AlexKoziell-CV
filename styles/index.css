@@ -8,24 +8,6 @@ h1 {
     font-weight: 500;
 }
 
-.nav-bar {
-    margin: auto;
-    max-width: 600px;
-
-    display: flex;
-    justify-content: space-evenly;
-
-    font-size: larger;
-
-    border-bottom: 3px solid white;
-}
-
-.nav-link {
-    padding: 8px;
-    color: white;
-    text-decoration: none;
-}
-
 .main {
     margin: auto;
     margin-bottom: 15px;
