@@ -1,0 +1,38 @@
+.accordion-entry {
+    border-bottom: 3px solid white;
+}
+
+.accordion-entry:first-of-type {
+    border-top: 3px solid white;
+}
+
+.accordion-header {
+    cursor: pointer;
+    color: white;
+    width: 100%;
+    transition: 0.4s;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-header > *:first-child {
+    margin-left: 10px;
+}
+
+.accordion-header > *:last-child {
+    margin-left: 5px;
+    margin-right: 10px;
+}
+  
+.accordion-header:hover {
+    background-color: #001c3c;
+}
+  
+.accordion-panel {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-out;
+}

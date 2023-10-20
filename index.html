@@ -9,6 +9,7 @@
 
   <link rel="stylesheet" href="styles/index.css">
   <link rel="stylesheet" href="styles/navbar.css">
+  <link rel="stylesheet" href="styles/accordion.css">
   <link rel="stylesheet" href="styles/footer.css">
   <link rel="stylesheet" href="styles/typewriter.css">
   <link rel="stylesheet" href="styles/fadein.css">
@@ -23,22 +24,57 @@
   </div>
 
   <main class="main">
-    <h1 class="typewriter blinking-cursor">Alexander Koziell-Pipe </h1>
-    <div class="fade-in">
-      <p>
-        I'm a Computer Science PhD (DPhil) at the Oxford Quantum Group, working at the intersection of
-        Category Theory, Quantum Computing and Artificial Intelligence.
-      </p>
-      <p>
-        While the nuts and bolts of my research involves some hardcore maths, I like to explain the high
-        level concepts using diagrams (which also turn out to be math).
-      </p>
-      <p>
-        Outside of research, I love gymnastics. You can find many pictures of me upside-down here:
-      </p>
+    <div class="fade-in section introduction">
+      <h1 class="typewriter blinking-cursor introduction-text">
+        Alexander (Alex) Koziell-Pipe is a Computer Science PhD Student at the University of Oxford,
+        conducting research at the intersection of AI, Mathematics and Quantum Computing. 
+      </h1>
     </div>
-
-    <blockquote class="instagram-media fade-in"
+    <div class="fade-in section">
+      <h1>
+        Projects
+      </h1>
+      <div class="accordion-entry">
+        <div class="accordion-header">
+          <h3>Interactive Theorem Proving for Graphical Languages</h3>
+          <h1>+</h1>
+        </div>
+        <div class="accordion-panel">
+        </div>
+      </div>
+    </div>
+    <div class="fade-in section">
+      <h1>
+        Key Roles
+      </h1>
+      <div class="accordion-entry">
+        <div class="accordion-header">
+          <h3>Representative of the Quantum Foundations Research Cluster, Wolfson College, Oxford</h3>
+          <h1>+</h1>
+        </div>
+        <div class="accordion-panel">
+        </div>
+      </div>
+      <div class="accordion-entry">
+        <div class="accordion-header">
+          <h3>Co-organizer of The ZX Seminar Series</h3>
+          <h1>+</h1>
+        </div>
+        <div class="accordion-panel">
+        </div>
+      </div>
+    </div>
+    <div class="fade-in section">
+      <h1>
+        A Passion for Athleticism
+      </h1>
+      <div class="collage">
+        <img src="public/img/circles.jpg" />
+        <img src="public/img/sunsetbacktuck.jpg" />
+        <img src="public/img/pbarsv.jpg" />
+        <img src="public/img/outdoorbacktuck.png" />
+      </div>
+      <blockquote class="instagram-media fade-in"
       data-instgrm-permalink="https://www.instagram.com/reel/CnewEQOhhme/?utm_source=ig_embed&amp;utm_campaign=loading"
       data-instgrm-version="14"
       style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max: width 326px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
@@ -123,9 +159,10 @@
           <a href="https://www.instagram.com/reel/CnewEQOhhme/?utm_source=ig_embed&amp;utm_campaign=loading"
             style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;"
             target="_blank">A post shared by Alex Koziell (@_athletic_academic_)</a></p>
-      </div>
-    </blockquote>
-    <script async src="//www.instagram.com/embed.js"></script>
+        </div>
+      </blockquote>
+      <script async src="//www.instagram.com/embed.js"></script>
+    </div>
   </main>
 
   <footer class="fade-in">
@@ -143,6 +180,7 @@
     </div>
   </footer>
 
+  <script src="scripts/accordion.js"></script>
   <script src="scripts/typewriter.js"></script>
   <script src="scripts/fadein.js"></script>
 
