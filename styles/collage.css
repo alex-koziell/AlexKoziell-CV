@@ -7,6 +7,10 @@
     scroll-behavior: smooth;
 }
 
+.collage::-webkit-scrollbar {
+    display: none;
+}
+
 .collage img {
     border-radius: 3%;
     max-width: 300px;
@@ -21,8 +25,30 @@
   display: inline-block;
   background: transparent;
   border-radius: 100%;
-  border: 3px solid #002147;
+  border: 3px solid white;
+  color: white;
   font-size: xx-large;
+
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(0.8); 
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(0.8); 
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(0.8);
+  transition: all 200ms ease-in;
+  transform: scale(0.8);
+}
+
+.collage-container button:hover {
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);
 }
 
 .collage-container .scroll-left {
