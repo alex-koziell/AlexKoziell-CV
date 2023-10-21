@@ -6,6 +6,7 @@ footer {
     align-items: center;
     justify-content: space-between;
     border-top: 3px solid white;
+    font-size: larger;
 }
 
 .social-icons a{
