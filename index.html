@@ -43,6 +43,37 @@
         <div class="accordion-panel">
         </div>
       </div>
+      <div class="accordion-entry">
+        <div class="accordion-header" id="alice-gpt-header">
+          <h3>GPT from Scratch trained on Alice in Wonderland</h3>
+          <h1>+</h1>
+        </div>
+        <div class="accordion-panel">
+          <div>
+            I built a GPT from scratch in PyTorch, implementing attention and multi-headed attention
+            without the use of PyTorch's own implementation.
+            <br><br>
+            After preprocessing the text from Lewis Carroll's "Alice's Adventures in Wonderland"
+            and "Through the Looking Glass",
+            I trained the GPT as a character-level language model that generated text in the same style as the novels.
+            <br><br>
+            The results generated were fantastic, and sounded like they could have come out of a new entry in Carroll's works!
+          </div>
+          <div id="alice-gpt-examples">
+            <h2 class="gpt-example">
+              “Begin at the beginning,” the King said gravely, “and go on till you
+              come to the end: then stop.”
+            </h2>
+            <h2 class="gpt-example">
+              “Read them,” said the King.
+            </h2>
+            <h2 class="gpt-example">
+              The White Rabbit put on his spectacles. “Where shall I begin, please
+              your Majesty?” he asked.
+            </h2>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="fade-in section">
       <h1>
@@ -191,6 +222,7 @@
   <script src="scripts/collage.js"></script>
   <script src="scripts/typewriter.js"></script>
   <script src="scripts/fadein.js"></script>
+  <!-- <script src="scripts/alicegpt.js"></script> -->
 
 </body>
 

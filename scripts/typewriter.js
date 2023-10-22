@@ -16,14 +16,13 @@ random_normal = (mean, variance, skew) => {
     return x
 }
 
-typewriter = textElement => {
+typewriter = (textElement, typeDelay) => {
     let text = textElement.textContent
     let textLength = text.length
     textElement.textContent = ''
     textElement.style.visibility = 'visible'
 
     let cursorPosition = 0
-    let typeDelay = 20
 
     let typeText = () => {
         textElement.textContent += text[cursorPosition]
@@ -51,7 +50,7 @@ const typewriterObserver = new IntersectionObserver(function(entries, observer) 
     for (const entry of entries) {
       if (entry.isIntersecting) {
         // Run the function when the element enters the viewport.
-        typeText = typewriter(entry.target)
+        typeText = typewriter(entry.target, 20)
         setTimeout(typeText, 1200)
         // Ensure the function is only called once.
         observer.unobserve(entry.target)
@@ -62,4 +61,37 @@ const typewriterObserver = new IntersectionObserver(function(entries, observer) 
 typewriterElements = document.querySelectorAll('.typewriter')
 typewriterElements.forEach(element => {
     typewriterObserver.observe(element)
+})
+
+const aliceTextContainer = document.getElementById('alice-gpt-examples')
+const aliceTexts = aliceTextContainer.querySelectorAll('.gpt-example')
+let activeTextIndex = 0
+let continueAliceExamples = true
+
+const changeExample = () => {
+  aliceTexts[activeTextIndex].classList.remove('active', 'blinking-cursor')
+  aliceTexts[activeTextIndex].height = 0
+
+  activeTextIndex = (activeTextIndex + 1) % aliceTexts.length
+
+  aliceTexts[activeTextIndex].classList.add('active', 'blinking-cursor')
+
+  var delay = aliceTexts[activeTextIndex].innerText.length * 90
+  if (delay < 3500) delay = 3500
+
+  typeText = typewriter(aliceTexts[activeTextIndex], 30)
+  setTimeout(typeText, 500)
+
+  if (continueAliceExamples)
+    setTimeout(changeExample, delay)
+}
+
+const aliceTextHeader = document.getElementById('alice-gpt-header')
+aliceTextHeader.addEventListener('click', () => {
+    if (aliceTextHeader.classList.contains('active')) {
+        continueAliceExamples = true
+        setTimeout(changeExample, 500)
+    } else {
+        continueAliceExamples = false
+    }
 })

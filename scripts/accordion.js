@@ -7,8 +7,10 @@ accordionHeaders.forEach(accordion => {
         var panel = this.nextElementSibling
         if (panel.style.maxHeight) {
             panel.style.maxHeight = null
+            accordion.classList.remove('active')
         } else {
             panel.style.maxHeight = panel.scrollHeight + "px"
+            accordion.classList.add('active')
         }
         })
 })
