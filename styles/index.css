@@ -12,7 +12,21 @@ h1 {
     margin: auto;
     margin-bottom: 15px;
     max-width: 600px;
+    text-align: justify;
+}
+
+.main h1, h2, h3 {
     text-align: left;
+}
+
+.main a {
+    color: orange;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.main a:hover {
+    text-decoration: underline;
 }
 
 .main img {
@@ -68,4 +82,9 @@ h1 {
 #alice-gpt-examples .active {
     display: inline;
     opacity: 1;
+}
+
+.quote {
+    text-align: center;
+    font-weight: bold;
 }
