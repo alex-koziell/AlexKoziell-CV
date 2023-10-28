@@ -1,7 +1,9 @@
-body{
+html {
     color: rgb(245, 245, 245);
     background-color: #002147;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: auto;
+    max-width: 600px;
 }
 
 h1 {
@@ -11,7 +13,6 @@ h1 {
 .main {
     margin: auto;
     margin-bottom: 15px;
-    max-width: 600px;
     text-align: justify;
 }
 
