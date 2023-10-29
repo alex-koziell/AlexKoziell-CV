@@ -1,6 +1,6 @@
 html {
-    color: rgb(245, 245, 245);
     background-color: #002147;
+    color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: auto;
     max-width: 600px;
@@ -10,14 +10,8 @@ h1 {
     font-weight: 500;
 }
 
-.main {
-    margin: auto;
-    margin-bottom: 15px;
+.main p {
     text-align: justify;
-}
-
-.main h1, h2, h3 {
-    text-align: left;
 }
 
 .main a {
@@ -31,30 +25,12 @@ h1 {
 }
 
 .main img {
-    max-width: 600px;
+    width: 100%;
 }
 
 .section {
     min-height: 75vh;
     padding-bottom: 10vh;
-}
-
-.video {
-    display: block;
-    margin: auto;
-
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    padding-top: 56.25%;
-}
-
-.video iframe {
-    position: absolute;
-    top: 0;
-    left: auto;
-    width: 100%;
-    height: 100%;
 }
 
 .introduction {
@@ -68,10 +44,10 @@ h1 {
 }
 
 #alice-gpt-examples {
+    align-items: center;
+    display: flex;
     font-family: 'Courier New', Courier, monospace;
     min-height: 300px;
-    display: flex;
-    align-items: center;
 }
 
 #alice-gpt-examples .gpt-example {
@@ -85,7 +61,7 @@ h1 {
     opacity: 1;
 }
 
-.quote {
-    text-align: center;
+p.quote {
     font-weight: bold;
+    text-align: center;
 }

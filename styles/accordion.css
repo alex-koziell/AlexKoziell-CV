@@ -7,23 +7,22 @@
 }
 
 .accordion-header {
-    cursor: pointer;
+    align-items: center;
     color: white;
-    width: 100%;
-    transition: 0.4s;
-
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    transition: 0.4s;
+    width: 100%;
 }
 
 .accordion-header > *:first-child {
-    margin-left: 10px;
+    margin-left: 0.5rem;
 }
 
 .accordion-header > *:last-child {
-    margin-left: 5px;
-    margin-right: 10px;
+    margin-left: 1rem;
+    margin-right: 0.5rem;
 }
   
 .accordion-header:hover {
@@ -31,8 +30,8 @@
 }
   
 .accordion-panel {
-    padding: 0 18px;
     max-height: 0;
     overflow: hidden;
+    padding: 0 0.8rem;
     transition: max-height 1s ease-out;
 }
