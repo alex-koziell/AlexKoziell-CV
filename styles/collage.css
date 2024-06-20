@@ -20,14 +20,17 @@
     position: relative;
 }
 
-.collage-container button {
+.collage-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.collage-buttons button {
     background: transparent;
-    border-radius: 100%;
+    border-radius: 25%;
     border: 3px solid white;
     color: white;
-    display: inline-block;
     font-size: xx-large;
-    position: absolute;
     transition: all 200ms ease-in;
     -webkit-transition: all 200ms ease-in;
     -webkit-transform: scale(0.8); 
@@ -38,24 +41,14 @@
     transform: scale(0.8);
 }
 
-.collage-container button:hover {
+.collage-buttons button:hover {
     transition: all 200ms ease-in;
     -webkit-transition: all 200ms ease-in;
     -webkit-transform: scale(1);
     -ms-transition: all 200ms ease-in;
     -ms-transform: scale(1);   
     -moz-transition: all 200ms ease-in;
-    -moz-transform: scale(1);
-    transform: scale(1);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9);
     z-index: 2;
-}
-
-.collage-container .scroll-left {
-    top: 50%;
-    left: 5px;
-}
-
-.collage-container .scroll-right {
-    top: 50%;
-    right: 5px;
 }
