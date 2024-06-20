@@ -1,12 +1,17 @@
-footer {
+.footer {
     margin: auto;
     max-width: 600px;
     padding-bottom: 2%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     border-top: 3px solid white;
     font-size: larger;
+}
+
+/* Mobile-first design */
+.footer-name {
+    font-size: 0;
 }
 
 .social-icons a{
@@ -37,4 +42,14 @@ footer {
     -moz-transform: scale(1);
     transition: all 200ms ease-in;
     transform: scale(1);
+}
+
+@media only screen and (min-width: 480px) {
+    .footer-name {
+        font-size: inherit;
+    }
+
+    .footer {
+        justify-content: space-between;
+    }
 }
