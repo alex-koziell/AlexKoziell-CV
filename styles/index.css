@@ -32,15 +32,45 @@ h1 {
     min-height: 75vh;
     padding-bottom: 10vh;
 }
+  
+  .section::before {
+    animation: bounce 5s ease infinite;
+    bottom: 2rem;
+    color: #fff;
+    content: '╲╱';
+    font-size: 2rem;
+    height: 4rem;
+    left: 50%;
+    letter-spacing: -1px;
+    line-height: 4rem;
+    margin-left: -3rem;
+    opacity: 0.8;
+    position: absolute;
+    text-align: center;
+    width: 6rem;
+  }
+  
+  @keyframes bounce {
+    0%, 80% {
+        transform: translateY(0%);
+      }
+    90% {
+      transform: translateY(-25%);
+    }
+  }
 
 .introduction {
     height: 100vh;
-    display: flex;
-    align-items: center;
+    padding-top: 10vh;
+}
+
+.introduction-img {
+    width: 100%;
+    height: auto;
 }
 
 .introduction-text {
-    transform: translateY(-10vh);
+    font-size: larger;
 }
 
 #alice-gpt-examples {
