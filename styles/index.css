@@ -5,6 +5,18 @@
     }
 }
 
+.introduction-header {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+
+@media only screen and (max-width: 570px) {
+    .introduction-header {
+        font-size: calc(1rem + 2vw);
+    }
+}
+
 html {
     background-color: #002147;
     color: white;
@@ -12,14 +24,6 @@ html {
     margin: auto;
     max-width: 600px;
     scroll-behavior: smooth;
-}
-
-h1 {
-    font-weight: 500;
-}
-
-.introduction {
-    height: 75vh;
 }
 
 .introduction-img {
