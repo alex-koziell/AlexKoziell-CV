@@ -1,22 +1,6 @@
-@media only screen and (max-height: 750px) {
-    .scroll-indicator {
-        visibility: hidden;
-        overflow: hidden;
-    }
-}
+/* Using Mobile-first indexing */
 
-h1 {
-    font-size: 1.8rem;
-    font-weight: 500;
-}
-
-
-@media only screen and (max-width: 570px) {
-    .introduction-header {
-        font-size: calc(1rem + 2vw);
-    }
-}
-
+/* Base/Global Styles */
 html {
     background-color: #002147;
     color: white;
@@ -26,33 +10,54 @@ html {
     scroll-behavior: smooth;
 }
 
-.introduction-img {
-    width: 100%;
-    height: auto;
+/* Typography */
+h1 {
+    font-size: 1.8rem;
+    font-weight: 500;
 }
 
-.introduction-text {
-    font-size: larger;
-}
-
-.main p {
+p {
     text-align: justify;
 }
 
-.main a {
+a {
     color: orange;
     font-weight: bold;
     text-decoration: none;
 }
 
-.main a:hover {
+a:hover {
     text-decoration: underline;
 }
 
-.main img {
+img {
     width: 100%;
 }
 
+/* UI Components/Elements */
+.scroll-indicator {
+    animation: bounce 5s ease infinite;
+    bottom: 1rem;
+    color: #fff !important;
+    content: '╲╱';
+    font-size: 1rem;
+    height: 4rem;
+    left: 45%;
+    letter-spacing: -1px;
+    opacity: 0.8;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    transition: 1s;
+    visibility: hidden;
+}
+
+.scroll-indicator:hover {
+    text-decoration: none !important;
+    opacity: 0.5;
+}
+
+/* Layout and Structure */
 .section {
     position: relative;
     min-height: 75vh;
@@ -63,28 +68,19 @@ html {
 .section:not(.introduction) {
     top: 50%;
 }
-  
-.scroll-indicator {
-    animation: bounce 5s ease infinite;
-    bottom: 4rem;
-    color: #fff !important;
-    content: '╲╱';
-    font-size: 2rem;
-    height: 4rem;
-    left: 44%;
-    letter-spacing: -1px;
-    opacity: 0.8;
-    position: absolute;
-    text-align: center;
-    transition: 1s;
+
+/* Utilities and Helpers */
+.introduction-header {
+    font-size: 1.5rem;
 }
 
-.scroll-indicator:hover {
-    text-decoration: none !important;
-    opacity: 0.5;
+.introduction-img {
+    width: 100%;
+    height: auto;
 }
-  
-  @keyframes bounce {
+
+/* Animations and Keyframes */
+@keyframes bounce {
     0%, 80% {
         transform: translateY(0%);
       }
@@ -93,25 +89,25 @@ html {
     }
 }
 
-/* #alice-gpt-examples {
-    align-items: center;
-    display: flex;
-    font-family: 'Courier New', Courier, monospace;
-    min-height: 300px;
+/* Media Queries */
+/* Enhancements for larger screens */
+@media only screen and (min-width: 401px) {
+    .scroll-indicator {
+        bottom: 2rem;
+        font-size: 1.5rem;
+    }
+    .introduction-header {
+        font-size: 2rem;
+    }
+    .introduction-text {
+        font-size: larger;
+    }
 }
 
-#alice-gpt-examples .gpt-example {
-    display: none;
-    opacity: 0;
-    transition: opacity 1.2s;
+@media only screen and (min-height: 751px) {
+    /* Adjust styles for taller screens */
+    .scroll-indicator {
+        overflow: auto;
+        visibility: visible;
+    }
 }
-
-#alice-gpt-examples .active {
-    display: inline;
-    opacity: 1;
-}
-
-p.quote {
-    font-weight: bold;
-    text-align: center;
-} */

@@ -1,0 +1,22 @@
+#alice-gpt-examples {
+    align-items: center;
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    min-height: 300px;
+}
+
+#alice-gpt-examples .gpt-example {
+    display: none;
+    opacity: 0;
+    transition: opacity 1.2s;
+}
+
+#alice-gpt-examples .active {
+    display: inline;
+    opacity: 1;
+}
+
+p.quote {
+    font-weight: bold;
+    text-align: center;
+}
