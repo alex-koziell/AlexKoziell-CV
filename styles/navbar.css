@@ -21,6 +21,7 @@
 
 .nav-text:hover {
     font-size: 1.35rem;
+    text-decoration: none;
     transition: all 300ms ease-in;
     -webkit-transition: all 300ms ease-in;
     -ms-transition: all 300ms ease-in;
