@@ -28,6 +28,10 @@
 .accordion-header:hover {
     background-color: #001c3c;
 }
+
+.accordion-header.active {
+    background-color: transparent;
+}
   
 .accordion-panel {
     max-height: 0;
